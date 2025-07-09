@@ -41,7 +41,7 @@ class UploadedDocument(Base):
     original_filename = Column(String(255), nullable=False)
     file_extension = Column(String(10), nullable=False)
     file_size = Column(Integer, nullable=False)  # Size in bytes
-    file_content = Column(LargeBinary, nullable=False)  # Store actual file content
+    file_content = Column(LargeBinary(length=4294967295), nullable=False)  # LONGBLOB - up to 4GB
     content_text = Column(Text, nullable=True)  # Extracted text content
     content_preview = Column(Text, nullable=True)  # First 500 characters
     upload_date = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)

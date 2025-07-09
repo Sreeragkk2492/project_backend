@@ -11,3 +11,4 @@ sqlalchemy
 sqlalchemy-utils
 mysqlclient
 mysql-connector-python
+pymysql
